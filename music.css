@@ -60,7 +60,7 @@ body {
     width: 280px; /* Lebar responsif *//* Lebar maksimum untuk gambar */
     height: 280px; /* Tinggi otomatis */
     position: relative;
-    top: -10px;
+    top: -30px;
 }
 
 .player-img img {
