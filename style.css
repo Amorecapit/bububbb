@@ -1,0 +1,252 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+
+h1 {
+  margin: 40px;
+  animation: slideIn 3s infinite;
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  margin: 0;
+  animation: bounce 2s infinite;
+  text-align: center;
+  margin-top: 3%;
+  color: black;
+}
+
+body {
+	margin: 0;
+  background-color: whitesmoke;
+  color: #3c210c; 
+  line-height: 1.6;
+}
+
+.navbar{
+	background: #3c210c;
+	margin: 0;
+	padding: 20px 0;
+  max-width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 1s;
+}
+ 
+.logo{
+	font-size: 15pt;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.logo:hover {
+  color: antiquewhite; /* Ganti warna saat hover */
+  transform: scale(1.1); /* Membesarkan logo saat hover */
+  transition: color 0.3s, transform 0.3s; /* Menambahkan efek transisi */
+}
+
+.logo span {
+  color: antiquewhite; /* Ganti 'red' dengan warna yang Anda inginkan */
+}
+ 
+.container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+ 
+.tombol{
+	display: none;
+	color: white;
+	font-size: 20pt;			
+  max-width: 100%;
+}
+ 
+.tombol:hover{
+  color: antiquewhite;
+	cursor: pointer;
+}
+ 
+.menu{
+	margin: 0;
+	display: flex;
+	list-style: none;
+	padding: 0;
+  border-radius: 15px;	
+  margin-top: 2%;		
+}
+ 
+.menu li{
+	padding-left: 0;
+	margin-right: 10px;
+}
+ 
+.menu li a{
+	padding:10px;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+  color: antiquewhite;
+  transform: scale(1.1); /* Membesarkan item menu saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan saat hover */
+  border-radius: 5px;
+}
+
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+  margin: auto;
+}
+
+.hero img {
+  width: 95%;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk transformasi dan bayangan */
+}
+
+.hero img:hover {
+    transform: scale(1.05); /* Membesarkan gambar saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan saat hover */
+}
+
+.cta-button {
+  display: inline-block;
+  background: wheat;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background 0.3s;
+  margin-bottom: 10px;
+  
+}
+
+.cta-button:hover {
+  background: antiquewhite;
+}
+
+footer {
+  text-align: center;
+  max-width: 100%;
+  padding: 15px 0;
+  background: #3c210c;
+  color: white;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: none;
+	}
+ 
+	.menu.aktif{
+		display:inline-block;
+		position: absolute;
+		top: 64px;
+		background: #212121;
+		padding: 10px 20px;
+		right: 0;
+		left: 0;
+	}
+ 
+	.menu.aktif li a{
+		padding: 10px;
+		display: inline-block !important;
+	}
+ 
+	.tombol {
+		display: block;
+	}
+}

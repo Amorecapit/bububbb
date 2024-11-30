@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+}
+
+.background img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 50%;
+    min-height: 50%;
+    filter: blur(15px);
+    -webkit-filter: blur(50px);
+    transform: scale(1.1);
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: auto; /* Tinggi otomatis untuk responsivitas */
+    width: 90%; /* Lebar responsif */
+    max-width: 400px; /* Lebar maksimum */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Padding untuk kontainer */
+}
+
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.player-img {
+    width: 300px; /* Lebar responsif *//* Lebar maksimum untuk gambar */
+    height: 300px; /* Tinggi otomatis */
+    position: relative;
+    top: -50px;
+}
+
+.player-img img {
+    object-fit: cover;
+    border-radius: 20px;
+    height: 100%; /* Tinggi otomatis */
+    width: 100%; /* Lebar otomatis */
+    opacity: 0;
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s;
+}
+
+.player-img:hover img {
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.8);
+}
+
+.player-img img.active {
+    opacity: 1;
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 500;
+    margin: 10px 0 0;
+    color: white;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    margin: 10px 0 0;
+    color: white;
+}
+
+.player-progress {
+    background-color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 0; /* Margin atas dan bawah */
+    height: 6px;
+    width: 90%; /* Lebar responsif */
+}
+
+.progress {
+    background-color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.music-duration {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Lebar responsif */
+    color: #666;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Lebar responsif */
+    margin-top: 10px;
+}
+
+.fa-solid {
+    font-size: 30px;
+    color: white;
+    margin: 0 15px; /* Margin untuk ikon */
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.fa-solid:hover {
+    filter: brightness(40%);
+}
+
+.play-button {
+    font-size: 44px;
+    position: relative;
+    top: -5px;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Untuk perangkat tablet dan lebih besar */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Lebar kontainer untuk tablet */
+        padding: 20px; /* Padding untuk tablet */
+    }
+
+    h2 {
+        font-size: 22px; /* Ukuran font untuk tablet */
+    }
+
+    h3 {
+        font-size: 16px; /* Ukuran font untuk tablet */
+    }
+
+    .player-controls {
+        flex-direction: row; /* Mengatur kontrol pemutar dalam baris */
+        justify-content: space-around; /* Menyebar kontrol */
+    }
+}
+
+/* Untuk perangkat mobile (lebar layar 480px atau kurang) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Lebar kontainer untuk mobile */
+        padding: 10px; /* Padding untuk mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Ukuran font untuk mobile */
+    }
+
+    h3 {
+        font-size: 14px; /* Ukuran font untuk mobile */
+    }
+
+    .fa-solid {
+        font-size: 24px; /* Ukuran ikon untuk mobile */
+        margin: 0 10px; /* Margin untuk ikon */
+    }
+
+    .play-button {
+        font-size: 36px; /* Ukuran tombol play untuk mobile */
+    }
+
+    .music-duration {
+        top: -20px; /* Penyesuaian posisi durasi musik */
+    }
+
+    .player-progress {
+        margin: 30px 0; /* Margin untuk progress bar */
+    }
+}
