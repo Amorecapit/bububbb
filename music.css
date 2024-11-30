@@ -58,9 +58,9 @@ body {
 
 .player-img {
     width: 300px;
-    height: 300px;
+    height: 290px;
     position: relative;
-    top: -50px;
+    top: -60px;
 }
 
 .player-img img {
