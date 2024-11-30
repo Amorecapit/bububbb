@@ -128,6 +128,44 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * music.duration;
 }
 
+// Ambil elemen volume
+const volumeSlider = document.getElementById('volume-slider');
+const volumeUpBtn = document.getElementById('volume-up');
+const volumeDownBtn = document.getElementById('volume-down');
+
+// Fungsi untuk mengatur volume
+function setVolume(value) {
+    music.volume = value; // Mengatur volume audio
+}
+
+// Event listener untuk slider
+volumeSlider.addEventListener('input', (event) => {
+    setVolume(event.target.value); // Mengatur volume berdasarkan nilai slider
+});
+
+// Event listener untuk tombol volume up
+volumeUpBtn.addEventListener('click', () => {
+    let currentVolume = parseFloat(volumeSlider.value);
+    if (currentVolume < 1) {
+        currentVolume = Math.min(currentVolume + 0.1, 1); // Menaikkan volume maksimum 1
+        volumeSlider.value = currentVolume; // Memperbarui slider
+        setVolume(currentVolume); // Mengatur volume
+    }
+});
+
+// Event listener untuk tombol volume down
+volumeDownBtn.addEventListener('click', () => {
+    let currentVolume = parseFloat(volumeSlider.value);
+    if (currentVolume > 0) {
+        currentVolume = Math.max(currentVolume - 0.1, 0); // Menurunkan volume minimum 0
+        volumeSlider.value = currentVolume; // Memperbarui slider
+        setVolume(currentVolume); // Mengatur volume
+    }
+});
+
+// Inisialisasi volume saat memuat musik
+setVolume(volumeSlider.value); // Pastikan volume sesuai dengan slider saat musik dimulai
+
 playBtn.addEventListener('click', togglePlay);
 prevBtn.addEventListener('click', () => changeMusic(-1));
 nextBtn.addEventListener('click', () => changeMusic(1));
