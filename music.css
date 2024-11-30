@@ -12,6 +12,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
 .background {
@@ -56,10 +57,10 @@ body {
 }
 
 .player-img {
-    width: 300px; /* Lebar responsif *//* Lebar maksimum untuk gambar */
-    height: 300px; /* Tinggi otomatis */
+    width: 280px; /* Lebar responsif *//* Lebar maksimum untuk gambar */
+    height: 280px; /* Tinggi otomatis */
     position: relative;
-    top: -50px;
+    top: -10px;
 }
 
 .player-img img {
@@ -74,6 +75,8 @@ body {
 
 .player-img:hover img {
     box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.8);
+    transform: scale(1.1); /* Membesarkan logo saat hover */
+    transition: color 0.3s, transform 0.3s; /* Menambahkan efek transisi */
 }
 
 .player-img img.active {
@@ -147,6 +150,41 @@ h3 {
     top: -5px;
 }
 
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    width: 90%;
+}
+
+#volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #666;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 10px;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
 /* Media Queries for Responsiveness */
 
